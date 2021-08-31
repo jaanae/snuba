@@ -59,6 +59,8 @@ RUN set -ex; \
     apt-get purge -y --auto-remove $buildDeps; \
     rm -rf /var/lib/apt/lists/*;
 
+RUN chgrp -R 0 /usr/src/snuba && chmod g+w -R /usr/src/snuba
+
 # Layer cache is pretty much invalidated here all the time,
 # so try not to do anything heavy beyond here.
 COPY . ./
