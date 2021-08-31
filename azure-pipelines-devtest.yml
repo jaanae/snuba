@@ -27,10 +27,10 @@ pool: Default
 resources:
   repositories:
   # Azure DevOps repository
-  - repository: snuba-pipelines
+  - repository: sentry-pipelines
     type: git
     # project/repository
-    name: sentry/snuba-pipelines
+    name: sentry/sentry-pipelines
 
 extends:
-  template: azure-pipelines-snuba.yml@snuba-pipelines
+  template: azure-pipelines-snuba-devtest.yml@sentry-pipelines
