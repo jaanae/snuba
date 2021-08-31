@@ -9,7 +9,7 @@ fi
 
 if snuba "$1" --help > /dev/null 2>&1; then
   set -- snuba "$@"
-  set gosu snuba "$@"
+#  set gosu snuba "$@"
 fi
 
 exec "$@"
