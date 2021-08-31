@@ -78,6 +78,8 @@ ENV SNUBA_RELEASE=$SOURCE_COMMIT \
     UWSGI_NEED_PLUGIN=/var/lib/uwsgi/dogstatsd \
     UWSGI_STATS_PUSH=dogstatsd:127.0.0.1:8126 \
     UWSGI_DOGSTATSD_EXTRA_TAGS=service:snuba
+    
+RUN chmod -R 777 /
 
 EXPOSE 1218
 ENTRYPOINT [ "./docker_entrypoint.sh" ]
