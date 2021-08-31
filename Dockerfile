@@ -64,12 +64,12 @@ RUN chgrp -R 0 /usr/src/snuba && chmod g+w -R /usr/src/snuba
 # Layer cache is pretty much invalidated here all the time,
 # so try not to do anything heavy beyond here.
 COPY . ./
-RUN set -ex; \
-    groupadd -r snuba; \
-    useradd -r -g snuba snuba; \
-    chown -R snuba:snuba ./; \
-    pip install -e .; \
-    snuba --help;
+# RUN set -ex; \
+#    groupadd -r snuba; \
+#    useradd -r -g snuba snuba; \
+#    chown -R snuba:snuba ./; \
+#   pip install -e .; \
+#    snuba --help;
 
 ARG SOURCE_COMMIT
 ENV SNUBA_RELEASE=$SOURCE_COMMIT \
