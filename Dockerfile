@@ -79,7 +79,7 @@ ENV SNUBA_RELEASE=$SOURCE_COMMIT \
     UWSGI_STATS_PUSH=dogstatsd:127.0.0.1:8126 \
     UWSGI_DOGSTATSD_EXTRA_TAGS=service:snuba
     
-RUN chmod -R 777 /
+RUN whoami
 
 EXPOSE 1218
 ENTRYPOINT [ "./docker_entrypoint.sh" ]
@@ -88,3 +88,5 @@ CMD [ "api" ]
 FROM application AS testing
 
 RUN pip install -r requirements-test.txt
+
+RUN whoami
